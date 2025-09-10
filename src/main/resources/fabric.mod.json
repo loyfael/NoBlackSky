@@ -1,0 +1,55 @@
+{
+	"schemaVersion": 1,
+	"id": "noblacksky",
+	"version": "${version}",
+	"name": "NoBlackSky",
+	"description": "Supprime le ciel noir qui apparaît sous la couche 63 dans Minecraft",
+	"authors": [
+		"Loyfael"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/noblacksky/icon.png",
+	"environment": "*",
+	"accessWidener": "noblacksky.accesswidener",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "loyfael.blacksky.NoBlackSky",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "loyfael.blacksky.NoBlackSkyClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "loyfael.blacksky.NoBlackSkyDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"noblacksky.mixins.json",
+		{
+			"config": "noblacksky.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
