@@ -23,9 +23,6 @@ public class WorldRendererMixin {
             
             // Si on est dans le void, annuler le rendu du ciel seulement si sous le seuil
             if (playerY < NoBlackSkyConfig.BLACK_FOG_REMOVAL_THRESHOLD) {
-                if (NoBlackSkyConfig.DEBUG_MODE) {
-                    System.out.println("[NoBlackSky] Annulation du rendu du ciel noir à Y=" + playerY);
-                }
                 ci.cancel(); // Annuler complètement le rendu du ciel quand dans le void
             } else if (NoBlackSkyConfig.DEBUG_MODE) {
                 System.out.println("[NoBlackSky] Rendu normal du ciel à Y=" + playerY);
